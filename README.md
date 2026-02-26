@@ -23,11 +23,8 @@ I design and build backend systems with a focus on cloud-native architecture, se
 | **ContextGuard** | Attack-path & IaC analyzer with severity scoring and false-positive reduction | Python · FastAPI · Terraform · AWS · Neo4j |
 | **DAG Computation Engine** | Event-driven DAG execution engine with concurrency control and backpressure | Node.js · TypeScript · Redis · RabbitMQ |
 
-## 📬 Get in Touch
+## 📬 Get in Touch :)
 
-- **Email:** [shaked@example.com](mailto:shaked@example.com)
-- **LinkedIn:** [linkedin.com/in/shakedarazi](https://linkedin.com/in/shakedarazi)
-- **GitHub:** [github.com/shakedArazi](https://github.com/shakedArazi)
 
 ---
 
