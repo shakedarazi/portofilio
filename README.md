@@ -1,83 +1,34 @@
-# Shaked.dev — Portfolio
+# 👋 Hey, I'm Shaked Arazi
 
-A premium single-page portfolio built with **Next.js 15** (App Router), **TypeScript**, and **Tailwind CSS v4**.
+**Backend / Cloud Security Engineer (Student)** based in Tel Aviv, Israel.
 
-## Quick Start
+I design and build backend systems with a focus on cloud-native architecture, security-by-design, and performance observability.
 
-```bash
-# Install dependencies
-npm install
+## 🔗 Live Portfolio
 
-# Run dev server
-npm run dev
-# → http://localhost:3000
-```
+> **[shaked.dev](https://shaked.dev)** — built with Next.js, TypeScript & Tailwind CSS
 
-## Deploy to Vercel
+## 🧠 What I Work On
 
-1. Push this repo to GitHub.
-2. Go to [vercel.com/new](https://vercel.com/new), import the repo.
-3. Vercel auto-detects Next.js — click **Deploy**. No config needed.
+- **Backend Systems** — event-driven architectures, type-safe APIs, distributed tracing
+- **Cloud & Platform** — AWS, Docker, Kubernetes, Terraform, CI/CD pipelines
+- **Security & Reliability** — IAM, trust boundaries, threat modeling, SLO-driven engineering
+- **AI / LLM Engineering** — RAG pipelines, prompt safety, evaluation frameworks
 
-## How to Edit Content
+## 🛠 Featured Projects
 
-All portfolio text lives in a single file:
+| Project | Description | Stack |
+|---|---|---|
+| **TaskGenius** | Containerized multi-service task platform with trust boundaries and observability hooks | Java · Spring Boot · Docker · PostgreSQL |
+| **ContextGuard** | Attack-path & IaC analyzer with severity scoring and false-positive reduction | Python · FastAPI · Terraform · AWS · Neo4j |
+| **DAG Computation Engine** | Event-driven DAG execution engine with concurrency control and backpressure | Node.js · TypeScript · Redis · RabbitMQ |
 
-```
-src/content/siteData.ts
-```
+## 📬 Get in Touch
 
-Edit the exported objects (`siteConfig`, `projects`, `experience`, etc.) and the site updates automatically. TypeScript types enforce the schema, so you'll get editor hints.
+- **Email:** [shaked@example.com](mailto:shaked@example.com)
+- **LinkedIn:** [linkedin.com/in/shakedarazi](https://linkedin.com/in/shakedarazi)
+- **GitHub:** [github.com/shakedArazi](https://github.com/shakedArazi)
 
-## How to Add a Project
+---
 
-1. Add your project image to `public/projects/` (e.g., `my-project.webp`).
-2. Open `src/content/siteData.ts` and add an entry to the `projects` array:
-
-```ts
-{
-  title: "My Project",
-  summary: "One-line summary.",
-  image: "/projects/my-project.webp",
-  impactBullets: [
-    "Reduced latency by 40%",
-    "Deployed with zero-downtime CI/CD",
-    "Handles 10K concurrent connections",
-  ],
-  tags: ["Node.js", "Redis", "Docker"],
-  github: "https://github.com/you/my-project",
-  liveDemo: "https://my-project.dev", // optional
-}
-```
-
-3. Save — the card appears in the Projects section.
-
-## File Structure
-
-```
-src/
-  app/
-    layout.tsx          # Root layout, fonts, dark-mode init
-    page.tsx            # Single page assembling all sections
-    globals.css         # Tailwind + CSS variables (light/dark)
-  components/
-    Navbar.tsx          # Sticky nav, dark toggle, social icons
-    Hero.tsx            # Hero with badge, headline, CTA
-    Section.tsx         # Reusable section wrapper
-    Focus.tsx           # 4-card pillars grid
-    Projects.tsx        # Featured projects section
-    ProjectCard.tsx     # Individual project card
-    Experience.tsx      # Work timeline + education
-    Skills.tsx          # Skill pills by category
-    Contact.tsx         # Contact info + form UI
-    Footer.tsx          # Footer
-  content/
-    siteData.ts         # ← ALL content lives here
-public/
-  profile.webp          # Profile photo
-  projects/             # Project screenshots
-```
-
-## Dark Mode
-
-Toggles via navbar button. Persisted in `localStorage`. Falls back to system preference on first visit.
+<sub>Portfolio source code — Next.js 15 · App Router · Tailwind CSS v4 · Deployed on Vercel</sub>
