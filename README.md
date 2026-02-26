@@ -1,6 +1,6 @@
 # 👋 Hey, I'm Shaked Arazi
 
-**Backend / Cloud Security Engineer (Student)** based in Tel Aviv, Israel.
+**Backend / Cloud /Data Engineer (Student)** based in Tel Aviv, Israel.
 
 I design and build backend systems with a focus on cloud-native architecture, security-by-design, and performance observability.
 
