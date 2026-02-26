@@ -27,5 +27,3 @@ I design and build backend systems with a focus on cloud-native architecture, se
 
 
 ---
-
-<sub>Portfolio source code — Next.js 15 · App Router · Tailwind CSS v4 · Deployed on Vercel</sub>
