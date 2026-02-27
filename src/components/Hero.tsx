@@ -20,8 +20,12 @@ export default function Hero() {
                     </h1>
 
                     {/* Subtext */}
-                    <p className="mt-6 text-lg text-fg-muted max-w-xl leading-relaxed">
-                        {siteConfig.subtext}
+                    <p className="mt-6 text-2xl text-fg-muted max-w-xl leading-relaxed">
+                        Software engineer focused on backend systems.
+                        <br />
+                        I build services and care about how they actually behave — how they execute, fail, and recover — designing them to be observable, predictable, and easy to reason about.
+                        <br />
+                        Currently completing a B.Sc. in Computer Science.
                     </p>
 
                     {/* CTA Buttons */}
@@ -32,20 +36,13 @@ export default function Hero() {
                         >
                             View Projects
                         </a>
-                        <a
-                            href={siteConfig.cvUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-6 py-3 rounded-lg border border-border text-fg font-medium hover:bg-bg-alt transition-colors"
-                        >
-                            Download CV (PDF)
-                        </a>
+
                     </div>
                 </div>
 
                 {/* Right column — profile image */}
                 <div className="flex-shrink-0">
-                    <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl border-2 border-border">
+                    <div className="relative w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden shadow-md ring-2 ring-border/25">
                         <Image
                             src={siteConfig.profileImage}
                             alt={`${siteConfig.name} profile photo`}

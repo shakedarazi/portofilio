@@ -49,9 +49,11 @@ function MoonIcon() {
 
 export default function Navbar() {
     const [darkMode, setDarkMode] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
         const isDark = document.documentElement.classList.contains("dark");
         setDarkMode(isDark);
     }, []);
@@ -97,8 +99,8 @@ export default function Navbar() {
                     <a href={`mailto:${siteConfig.email}`} aria-label="Email" className="text-fg-muted hover:text-primary transition-colors">
                         <MailIcon />
                     </a>
-                    <button onClick={toggleDark} aria-label="Toggle dark mode" className="p-2 rounded-lg text-fg-muted hover:text-primary hover:bg-bg-alt transition-colors">
-                        {darkMode ? <SunIcon /> : <MoonIcon />}
+                    <button onClick={toggleDark} aria-label="Toggle dark mode" className="p-2 rounded-lg text-fg-muted hover:text-primary hover:bg-bg-alt transition-colors" suppressHydrationWarning>
+                        {mounted ? (darkMode ? <SunIcon /> : <MoonIcon />) : <MoonIcon />}
                     </button>
                     <a
                         href="#contact"

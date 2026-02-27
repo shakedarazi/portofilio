@@ -119,6 +119,7 @@ export default function Contact() {
                                 id="name"
                                 placeholder="Your name"
                                 className="w-full px-4 py-2.5 rounded-lg border border-border bg-bg text-fg placeholder:text-fg-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                suppressHydrationWarning
                             />
                         </div>
                         <div>
@@ -130,6 +131,7 @@ export default function Contact() {
                                 id="email"
                                 placeholder="you@example.com"
                                 className="w-full px-4 py-2.5 rounded-lg border border-border bg-bg text-fg placeholder:text-fg-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                suppressHydrationWarning
                             />
                         </div>
                         <div>
@@ -141,6 +143,7 @@ export default function Contact() {
                                 id="subject"
                                 placeholder="What's this about?"
                                 className="w-full px-4 py-2.5 rounded-lg border border-border bg-bg text-fg placeholder:text-fg-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                                suppressHydrationWarning
                             />
                         </div>
                         <div>
@@ -152,11 +155,13 @@ export default function Contact() {
                                 rows={4}
                                 placeholder="Your message..."
                                 className="w-full px-4 py-2.5 rounded-lg border border-border bg-bg text-fg placeholder:text-fg-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none"
+                                suppressHydrationWarning
                             />
                         </div>
                         <button
                             type="submit"
                             className="w-full px-6 py-3 rounded-lg bg-primary text-white font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+                            suppressHydrationWarning
                         >
                             Send Message
                         </button>

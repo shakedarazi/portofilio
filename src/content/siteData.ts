@@ -54,173 +54,392 @@ export interface SkillCategory {
   skills: string[];
 }
 
-// ─── Data ───
+// ─── Site Config ───
 
 export const siteConfig: SiteConfig = {
   name: "Shaked Arazi",
-  logo: "Shaked.dev",
-  headline: "Building robust",
-  headlineAccent: "backend systems",
+
+  logo: "",
+
+  headline: "",
+  headlineAccent: "",
+
   subtext:
-    "Backend-focused engineer designing cloud-native architectures with security-by-design principles, performance observability, and production-grade reliability. Currently pursuing a B.Sc. in Computer Science.",
-  badge: "Open to Opportunities",
+    "Software engineer focused on backend systems.I build services and care about how they actually behave — how they execute, fail, and recover — designing them to be observable, predictable, and easy to reason about.Currently completing a B.Sc. in Computer Science.",
+
+  badge: "",
+
   location: "Tel Aviv, Israel",
-  email: "shaked@example.com",
+
+  email: "shaked13579@gmail.com",
+
   github: "https://github.com/shakedArazi",
+
   linkedin: "https://linkedin.com/in/shakedarazi",
+
   cvUrl: "/cv.pdf",
+
   profileImage: "/profile.webp",
 };
 
+// ─── Focus Pillars ───
+
 export const focusPillars: FocusPillar[] = [
+
   {
     icon: "⚙️",
     title: "Backend Systems",
-    description: "Production-grade services built for correctness.",
+    description: "Production-grade backend services.",
     highlights: [
-      "Event-driven & microservice architectures",
-      "Type-safe APIs with contract-first design",
-      "Structured logging and distributed tracing",
+      "Event-driven and microservice architectures",
+      "Execution model and concurrency design",
+      "Structured logging and observability thinking",
     ],
   },
-  {
-    icon: "🤖",
-    title: "AI / LLM Engineering",
-    description: "Practical AI integration with safety guardrails.",
-    highlights: [
-      "RAG pipelines with embedding search",
-      "Prompt safety & output validation",
-      "Evaluation frameworks for LLM quality",
-    ],
-  },
+
   {
     icon: "☁️",
-    title: "Cloud & Platform",
-    description: "Infrastructure that scales and deploys predictably.",
+    title: "Cloud & Infrastructure",
+    description: "Cloud-native system design and deployment.",
     highlights: [
-      "AWS, Docker, Kubernetes, Terraform",
-      "CI/CD with automated quality gates",
-      "Infrastructure-as-Code best practices",
+      "Docker, Kubernetes, Terraform",
+      "GCP and AWS-based systems",
+      "Infrastructure-aware backend development",
     ],
   },
+
   {
-    icon: "🔒",
-    title: "Security & Reliability",
-    description: "Threat-aware design from day one.",
+    icon: "🧠",
+    title: "Distributed & Event-Driven Systems",
+    description: "Explicit execution flow and orchestration.",
     highlights: [
-      "IAM, network segmentation, trust boundaries",
-      "Attack-path analysis & threat modeling",
-      "SLO-driven reliability engineering",
+      "DAG-based execution engines",
+      "Backend orchestration systems",
+      "Message-driven system design",
     ],
   },
+
+  {
+    icon: "🤖",
+    title: "AI-Integrated Backend",
+    description: "LLM integration within backend architecture.",
+    highlights: [
+      "RAG pipelines",
+      "Hybrid inference architectures",
+      "Execution planning systems",
+    ],
+  },
+
 ];
+
+// ─── Projects ───
 
 export const projects: Project[] = [
+
   {
-    title: "TaskGenius",
+    title: "TaskGenius – Cloud-Native Task Platform",
+
     summary:
-      "Containerized multi-service task platform with trust boundaries and observability hooks.",
+      "Cloud-native multi-service task management platform built with FastAPI, enforcing strict service isolation, single-ingress architecture, and infrastructure-level trust boundaries.",
+
     image: "/projects/taskgenius.webp",
+
     impactBullets: [
-      "Enforced service-level trust boundaries reducing lateral attack surface",
-      "Integrated distributed tracing with <50ms p99 overhead per request",
-      "Achieved 99.9% uptime target with health-check and circuit-breaker patterns",
+
+      "Designed FastAPI backend acting as the single ingress for authentication, authorization, and data mutation",
+
+      "Architected multi-container system separating API, AI service, scheduler, and database",
+
+      "Enforced container-level trust boundaries using Docker networking",
+
+      "Implemented backend orchestration coordinating AI inference and task workflows",
+
+      "Containerized entire system enabling reproducible deployment"
+
     ],
-    tags: ["Java", "Spring Boot", "Docker", "PostgreSQL", "Prometheus", "gRPC"],
-    github: "https://github.com/shakedArazi/taskgenius",
-  },
-  {
-    title: "ContextGuard",
-    summary:
-      "Attack-path and IaC analyzer with severity scoring and false-positive reduction.",
-    image: "/projects/contextguard.webp",
-    impactBullets: [
-      "Reduced false-positive rate by 40% through contextual severity scoring",
-      "Analyzed IaC templates for misconfigured security groups and open ports",
-      "Breakpoint-driven analysis enabling targeted remediation workflows",
+
+    tags: [
+      "Python",
+      "FastAPI",
+      "Docker",
+      "MongoDB",
+      "Microservices",
+      "REST API",
+      "Distributed Systems",
     ],
-    tags: ["Python", "FastAPI", "Terraform", "AWS", "Neo4j", "Docker"],
-    github: "https://github.com/shakedArazi/contextguard",
+
+    github: "https://github.com/shakedArazi/taskgenius"
+
   },
+
   {
-    title: "DAG Computation Engine",
+    title: "DAG-Based Event Processing Engine",
+
     summary:
-      "Event-driven DAG execution engine with concurrency control and backpressure.",
+      "Event-driven execution engine modeling computation as an explicit DAG with isolated execution units and concurrency control.",
+
     image: "/projects/dag-engine.webp",
+
     impactBullets: [
-      "DAG validation prevents cyclic dependencies at submission time",
-      "Backpressure mechanism maintains <200ms task scheduling latency under load",
-      "Concurrent execution with configurable parallelism and retry policies",
+
+      "Designed execution engine enforcing acyclic graph structure",
+
+      "Implemented Active Object concurrency model",
+
+      "Built configuration-driven orchestration layer",
+
+      "Developed REST ingress API and real-time streaming",
+
+      "Separated execution model from transport layer"
+
     ],
-    tags: ["Node.js", "TypeScript", "Redis", "RabbitMQ", "Docker", "Grafana"],
-    github: "https://github.com/shakedArazi/dag-engine",
+
+    tags: [
+      "Java",
+      "Spring Boot",
+      "Concurrency",
+      "Event-Driven Architecture",
+      "Multithreading",
+      "Systems Design",
+    ],
+
+    github: "https://github.com/shakedArazi/dag-engine"
+
   },
+
+  {
+    title: "ContextGuard – IaC Attack Path Analyzer",
+
+    summary:
+      "Graph-based analysis engine evaluating Terraform plans to identify reachable attack paths.",
+
+    image: "/projects/contextguard.webp",
+
+    impactBullets: [
+
+      "Parsed Terraform plans into graph model",
+
+      "Implemented BFS reachability analysis",
+
+      "Developed contextual risk scoring",
+
+      "Built CLI integrated into infrastructure workflows",
+
+      "Generated structured analysis reports"
+
+    ],
+
+    tags: [
+      "Python",
+      "Terraform",
+      "AWS",
+      "Graph Algorithms",
+      "CLI",
+      "Infrastructure as Code",
+    ],
+
+    github: "https://github.com/shakedArazi/contextguard"
+
+  },
+
+  {
+    title: "News Polarization Analysis Platform (GCP) – In Progress",
+
+    summary:
+      "Cloud-based data pipeline using GCP and BigQuery.",
+
+    image: "/projects/review-analysis.webp",
+
+    impactBullets: [
+
+      "Built data ingestion pipeline on GCP",
+
+      "Implemented LLM analysis services",
+
+      "Designed BigQuery processing layer",
+
+      "Developed batch workflows",
+
+      "Produced analytics-ready datasets"
+
+    ],
+
+    tags: [
+      "Python",
+      "GCP",
+      "BigQuery",
+      "Cloud Storage",
+      "Data Pipeline",
+    ],
+
+    github: "https://github.com/shakedArazi/review-analysis"
+
+  },
+
+  {
+    title: "Plan-Orchestrated Chatbot Platform",
+
+    summary:
+      "Backend orchestration system executing structured tool chains.",
+
+    image: "/projects/chatbot.webp",
+
+    impactBullets: [
+
+      "Built execution planner",
+
+      "Implemented orchestration engine",
+
+      "Developed RAG microservice",
+
+      "Integrated local and cloud models",
+
+      "Designed multi-service backend"
+
+    ],
+
+    tags: [
+      "TypeScript",
+      "Node.js",
+      "FastAPI",
+      "Python",
+      "Microservices",
+    ],
+
+    github: "https://github.com/shakedArazi/ChatBot"
+
+  },
+
 ];
+
+// ─── Experience ───
 
 export const experience: ExperienceItem[] = [
+
+  {
+    role: "Company Commander & Technical Training Lead",
+
+    company: "Israel Defense Forces (IDF)",
+
+    period: "2017 – 2022",
+
+    bullets: [
+
+      "Led teams operating real-time command and control systems",
+
+      "Designed and built technical training programs",
+
+      "Trained personnel on complex operational systems",
+
+      "Developed simulation-based training",
+
+      "Managed large-scale technical training operations"
+
+    ],
+
+  },
+
   {
     role: "NOC Engineer",
+
     company: "Production Monitoring",
+
     period: "2022 – Present",
+
     bullets: [
-      "Monitored production infrastructure across multi-region deployments",
-      "Led incident response and root-cause analysis for P1/P2 incidents",
-      "Mapped service dependencies to reduce MTTR by 30%",
-      "Built alerting dashboards for real-time SLO tracking",
+
+      "Monitored production server environments",
+
+      "Performed incident triage",
+
+      "Investigated operational issues",
+
+      "Worked with Linux systems",
+
+      "Collaborated with engineering teams"
+
     ],
+
   },
+
+  {
+    role: "Computer Science Tutor",
+
+    company: "The College of Management Academic Studies",
+
+    period: "2023 – Present",
+
+    bullets: [
+
+      "Tutored students in algorithms and data structures",
+
+      "Explained complex CS concepts",
+
+      "Developed problem-solving skills",
+
+      "Guided debugging and reasoning"
+
+    ],
+
+  },
+
 ];
+
+// ─── Education ───
 
 export const education: EducationItem[] = [
+
   {
     degree: "B.Sc. Computer Science",
-    school: "University (Placeholder)",
+
+    school: "The College of Management Academic Studies",
+
     period: "2021 – 2025",
-    note: "Focus: distributed systems, algorithms, software engineering",
+
   },
+
 ];
 
+// ─── Skills ───
+
 export const skillCategories: SkillCategory[] = [
+
   {
     label: "Backend",
     skills: ["Java", "Spring Boot", "Node.js", "FastAPI", "Python", "TypeScript"],
   },
+
   {
-    label: "Cloud & DevOps",
-    skills: ["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD", "Linux"],
+    label: "Cloud",
+    skills: ["AWS", "GCP", "Docker", "Kubernetes", "Terraform"],
   },
+
   {
-    label: "Security",
-    skills: [
-      "IAM",
-      "Network Segmentation",
-      "Attack Paths",
-      "Threat Modeling",
-      "Trust Boundaries",
-    ],
+    label: "Systems",
+    skills: ["Distributed Systems", "Concurrency", "Event-Driven Architecture"],
   },
+
   {
-    label: "Performance & Observability",
-    skills: [
-      "Prometheus",
-      "Grafana",
-      "Load Testing",
-      "Profiling",
-      "SLOs",
-      "Distributed Tracing",
-    ],
+    label: "Data",
+    skills: ["BigQuery", "Kafka", "Airflow"],
   },
-  {
-    label: "AI / LLM",
-    skills: ["RAG", "Embeddings", "Evaluation", "Prompt Safety", "LangChain"],
-  },
+
 ];
 
+// ─── Navigation ───
+
 export const navLinks = [
+
   { label: "About", href: "#about" },
+
   { label: "Focus", href: "#focus" },
+
   { label: "Projects", href: "#projects" },
+
   { label: "Experience", href: "#experience" },
+
   { label: "Skills", href: "#skills" },
+
   { label: "Contact", href: "#contact" },
+
 ];
