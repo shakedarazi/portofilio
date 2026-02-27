@@ -88,45 +88,23 @@ export const focusPillars: FocusPillar[] = [
 
   {
     icon: "⚙️",
-    title: "Backend Systems",
-    description: "Production-grade backend services.",
+    title: "Software Design",
+    description: "I build software with clear structure, explicit behavior, and long-term maintainability.",
     highlights: [
-      "Event-driven and microservice architectures",
-      "Execution model and concurrency design",
-      "Structured logging and observability thinking",
+      "Design components and services that are easy to understand and extend",
+      "Consider failure, recovery, and edge cases as part of the design",
+      "Prefer simple, well-reasoned solutions over unnecessary complexity",
     ],
   },
 
   {
-    icon: "☁️",
-    title: "Cloud & Infrastructure",
-    description: "Cloud-native system design and deployment.",
+    icon: "🔗",
+    title: "System Execution and Reliability",
+    description: "I focus on how software executes in practice, and how to make that execution predictable and observable.",
     highlights: [
-      "Docker, Kubernetes, Terraform",
-      "GCP and AWS-based systems",
-      "Infrastructure-aware backend development",
-    ],
-  },
-
-  {
-    icon: "🧠",
-    title: "Distributed & Event-Driven Systems",
-    description: "Explicit execution flow and orchestration.",
-    highlights: [
-      "DAG-based execution engines",
-      "Backend orchestration systems",
-      "Message-driven system design",
-    ],
-  },
-
-  {
-    icon: "🤖",
-    title: "AI-Integrated Backend",
-    description: "LLM integration within backend architecture.",
-    highlights: [
-      "RAG pipelines",
-      "Hybrid inference architectures",
-      "Execution planning systems",
+      "Model execution flow so behavior and dependencies are explicit",
+      "Use structure and observability to make systems easier to debug and operate",
+      "Design with reliability and operational clarity in mind",
     ],
   },
 
@@ -137,105 +115,23 @@ export const focusPillars: FocusPillar[] = [
 export const projects: Project[] = [
 
   {
-    title: "TaskGenius – Cloud-Native Task Platform",
+    title: "Graph-Based Analyzer for Infrastructure Attack Paths",
 
     summary:
-      "Cloud-native multi-service task management platform built with FastAPI, enforcing strict service isolation, single-ingress architecture, and infrastructure-level trust boundaries.",
+      "I built an analysis engine that converts Terraform plans into a reachability graph to identify and prioritize actual attack paths.",
 
-    image: "/projects/taskgenius.webp",
-
-    impactBullets: [
-
-      "Designed FastAPI backend acting as the single ingress for authentication, authorization, and data mutation",
-
-      "Architected multi-container system separating API, AI service, scheduler, and database",
-
-      "Enforced container-level trust boundaries using Docker networking",
-
-      "Implemented backend orchestration coordinating AI inference and task workflows",
-
-      "Containerized entire system enabling reproducible deployment"
-
-    ],
-
-    tags: [
-      "Python",
-      "FastAPI",
-      "Docker",
-      "MongoDB",
-      "Microservices",
-      "REST API",
-      "Distributed Systems",
-    ],
-
-    github: "https://github.com/shakedArazi/taskgenius"
-
-  },
-
-  {
-    title: "DAG-Based Event Processing Engine",
-
-    summary:
-      "Event-driven execution engine modeling computation as an explicit DAG with isolated execution units and concurrency control.",
-
-    image: "/projects/dag-engine.webp",
+    image: "/projects/contextguard.png",
 
     impactBullets: [
-
-      "Designed execution engine enforcing acyclic graph structure",
-
-      "Implemented Active Object concurrency model",
-
-      "Built configuration-driven orchestration layer",
-
-      "Developed REST ingress API and real-time streaming",
-
-      "Separated execution model from transport layer"
-
-    ],
-
-    tags: [
-      "Java",
-      "Spring Boot",
-      "Concurrency",
-      "Event-Driven Architecture",
-      "Multithreading",
-      "Systems Design",
-    ],
-
-    github: "https://github.com/shakedArazi/dag-engine"
-
-  },
-
-  {
-    title: "ContextGuard – IaC Attack Path Analyzer",
-
-    summary:
-      "Graph-based analysis engine evaluating Terraform plans to identify reachable attack paths.",
-
-    image: "/projects/contextguard.webp",
-
-    impactBullets: [
-
-      "Parsed Terraform plans into graph model",
-
-      "Implemented BFS reachability analysis",
-
-      "Developed contextual risk scoring",
-
-      "Built CLI integrated into infrastructure workflows",
-
-      "Generated structured analysis reports"
-
+      "Designed a pipeline that parses Terraform plan output and constructs a directed graph of network and privilege relationships",
+      "Used graph traversal to analyze reachability and determine whether exposed resources can access sensitive assets",
+      "Defined a deterministic scoring model based on path structure rather than isolated misconfigurations",
+      "Implemented breakpoint recommendations to interrupt attack paths while preserving intended system functionality"
     ],
 
     tags: [
       "Python",
       "Terraform",
-      "AWS",
-      "Graph Algorithms",
-      "CLI",
-      "Infrastructure as Code",
     ],
 
     github: "https://github.com/shakedArazi/contextguard"
@@ -243,70 +139,107 @@ export const projects: Project[] = [
   },
 
   {
-    title: "News Polarization Analysis Platform (GCP) – In Progress",
+    title: "DAG-Based Engine with Explicit Execution Semantics",
 
     summary:
-      "Cloud-based data pipeline using GCP and BigQuery.",
+      "I designed a computation engine that executes logic over a validated DAG, with explicit dataflow and isolated execution units.",
 
-    image: "/projects/review-analysis.webp",
+    image: "/projects/javaDAG.png",
 
     impactBullets: [
-
-      "Built data ingestion pipeline on GCP",
-
-      "Implemented LLM analysis services",
-
-      "Designed BigQuery processing layer",
-
-      "Developed batch workflows",
-
-      "Produced analytics-ready datasets"
-
+      "Defined a computation model where each processing unit and dependency is represented explicitly as a graph node",
+      "Validated graph structure before execution to prevent cycles and guarantee termination",
+      "Separated computation logic from orchestration by defining system wiring through configuration",
+      "Implemented isolated execution units using dedicated workers to control concurrency and execution behavior"
     ],
 
     tags: [
-      "Python",
-      "GCP",
-      "BigQuery",
-      "Cloud Storage",
-      "Data Pipeline",
+      "Java",
+      "Spring Boot",
     ],
 
-    github: "https://github.com/shakedArazi/review-analysis"
+    github: "https://github.com/shakedArazi/dag-engine"
 
   },
 
   {
-    title: "Plan-Orchestrated Chatbot Platform",
+    title: "Backend Architecture with Enforced Mutation Boundaries",
 
     summary:
-      "Backend orchestration system executing structured tool chains.",
+      "I built a backend architecture where all state changes pass through a controlled API layer, separating inference from mutation.",
 
-    image: "/projects/chatbot.webp",
+    image: "/projects/core_api.png",
 
     impactBullets: [
-
-      "Built execution planner",
-
-      "Implemented orchestration engine",
-
-      "Developed RAG microservice",
-
-      "Integrated local and cloud models",
-
-      "Designed multi-service backend"
-
+      "Designed the system around a single mutation entry point, ensuring all state changes go through explicit validation",
+      "Separated the AI component so it cannot directly access the database or perform mutations",
+      "Defined strict trust boundaries to secure service interactions and isolate internal components",
+      "Implemented validation and authorization layers to enforce controlled, predictable state transitions"
     ],
 
     tags: [
       "TypeScript",
       "Node.js",
-      "FastAPI",
+      "React",
+      "MongoDB",
+      "Docker",
+    ],
+
+    github: "https://github.com/shakedArazi/taskgenius"
+
+  },
+
+  {
+    title: "Execution-Planned Backend with Structured Tool Orchestration",
+
+    summary:
+      "I built a backend that converts user input into an explicit execution plan and runs dependent tools in a controlled sequence.",
+
+    image: "/projects/chatbot.png",
+
+    impactBullets: [
+      "Designed a planner that translates user requests into structured execution steps with defined dependencies",
+      "Implemented an executor that resolves inter-step data flow and enforces execution order",
+      "Separated orchestration logic from model inference to maintain control over execution behavior",
+      "Analyzed failure scenarios and defined fallback paths to preserve system stability"
+    ],
+
+    tags: [
+      "TypeScript",
       "Python",
-      "Microservices",
+      "FastAPI",
+      "Bun",
     ],
 
     github: "https://github.com/shakedArazi/ChatBot"
+
+  },
+
+  {
+    title: "Batch Pipeline for Structured Analysis of Opinion Polarization (Ongoing)",
+
+    summary:
+      "I am building a batch processing pipeline that analyzes opinion data and produces structured results for downstream analytics.",
+
+    image: "/projects/polarization.png",
+
+    impactBullets: [
+      "Designing a batch pipeline orchestrated with Airflow to run analysis jobs on scheduled datasets",
+      "Defining aggregation stages that transform raw analysis results into structured summaries before storage",
+      "Planning data storage in BigQuery to support efficient querying and downstream analysis",
+      "Designing the pipeline output to integrate with Looker for visualization and exploration",
+      "Structuring the system as independent processing stages to keep execution explicit and observable"
+    ],
+
+    tags: [
+      "Python",
+      "Airflow",
+      "GCP",
+      "BigQuery",
+      "Looker",
+    ],
+
+    github: "https://github.com/shakedArazi/review-analysis"
 
   },
 

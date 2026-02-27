@@ -8,10 +8,11 @@ export default function Hero() {
                 {/* Left column */}
                 <div className="flex-1 text-center md:text-left">
                     {/* Badge */}
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 mb-6">
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                        {siteConfig.badge}
-                    </span>
+                    {siteConfig.badge && (
+                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 mb-6">
+                            {siteConfig.badge}
+                        </span>
+                    )}
 
                     {/* Headline */}
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-fg">

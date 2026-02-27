@@ -41,7 +41,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-bg text-fg`}>
+      <body className={`${inter.variable} font-sans antialiased bg-bg text-fg`} suppressHydrationWarning>
         {children}
       </body>
     </html>
