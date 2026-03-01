@@ -85,18 +85,22 @@ export interface SiteConfig {
   
   {
   icon: "⚙️",
-  title: "System Design and Execution",
-  description:
-  "I design systems around explicit execution boundaries, controlled state transitions, and clear separation of responsibility, so behavior remains understandable and resilient as complexity grows.",
+  title: "Understanding How Systems Execute",
+  description: "I'm interested in how systems actually run — how data moves, how components interact, and how structure shapes behavior.",
   },
-  
+
   {
-  icon: "🔗",
-  title: "Operational Reliability",
-  description:
-  "I focus on how systems behave under real conditions — how data flows, where failures emerge, and how to make execution observable, diagnosable, and predictable.",
+  icon: "🔍",
+  title: "Making Failures Understandable",
+  description: "I try to build things in a way that makes failures visible and explainable, so problems can be understood and fixed with confidence.",
   },
-  
+
+  {
+  icon: "🧠",
+  title: "Thinking in Terms of Boundaries",
+  description: "I'm naturally drawn to systems with clear boundaries and responsibilities, where behavior stays predictable even as complexity increases.",
+  },
+
   ];
   
   // ─── Projects ───
@@ -194,15 +198,14 @@ export interface SiteConfig {
       ],
       },
   {
-  role: "Computer Science Tutor",
+  role: "Computer Science Tutor (Private)",
   company: "The College of Management Academic Studies",
   period: "",
   bullets: [
-  "Taught algorithms and data structures to undergraduate students.",
-  "Explained complex technical concepts through structured reasoning.",
-  "Guided debugging and problem-solving processes.",
-  "Helped students build strong analytical thinking skills.",
-  "Reinforced core computer science foundations.",
+  "Taught algorithms and data structures to undergraduate computer science students in one-on-one sessions.",
+  "Broke down complex problems into structured, understandable steps, improving students' problem-solving ability.",
+  "Guided students through debugging processes, helping them identify root causes instead of trial-and-error fixes.",
+  "Strengthened students' analytical thinking and understanding of core CS concepts.",
   ],
   },
   
