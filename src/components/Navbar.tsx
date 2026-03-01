@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { siteConfig, navLinks } from "@/content/siteData";
 
 function GithubIcon() {
@@ -23,9 +23,17 @@ function LinkedInIcon() {
     );
 }
 
+function PhoneIcon() {
+    return (
+        <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+        </svg>
+    );
+}
+
 function MailIcon() {
     return (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+        <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
         </svg>
     );
@@ -51,11 +59,23 @@ export default function Navbar() {
     const [darkMode, setDarkMode] = useState(false);
     const [mounted, setMounted] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [contactOpen, setContactOpen] = useState(false);
+    const contactRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setMounted(true);
         const isDark = document.documentElement.classList.contains("dark");
         setDarkMode(isDark);
+    }, []);
+
+    useEffect(() => {
+        function handleClickOutside(e: MouseEvent) {
+            if (contactRef.current && !contactRef.current.contains(e.target as Node)) {
+                setContactOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
     const toggleDark = () => {
@@ -70,12 +90,13 @@ export default function Navbar() {
     return (
         <nav className="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur-md border-b border-border">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
                 {/* Logo */}
                 <a href="#about" className="text-xl font-bold text-primary tracking-tight">
                     {siteConfig.logo}
                 </a>
 
-                {/* Desktop links */}
+                {/* Desktop nav links */}
                 <div className="hidden md:flex items-center gap-6">
                     {navLinks.map((l) => (
                         <a
@@ -96,18 +117,44 @@ export default function Navbar() {
                     <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-fg-muted hover:text-primary transition-colors">
                         <LinkedInIcon />
                     </a>
-                    <a href={`mailto:${siteConfig.email}`} aria-label="Email" className="text-fg-muted hover:text-primary transition-colors">
-                        <MailIcon />
-                    </a>
                     <button onClick={toggleDark} aria-label="Toggle dark mode" className="p-2 rounded-lg text-fg-muted hover:text-primary hover:bg-bg-alt transition-colors" suppressHydrationWarning>
                         {mounted ? (darkMode ? <SunIcon /> : <MoonIcon />) : <MoonIcon />}
                     </button>
-                    <a
-                        href={`mailto:${siteConfig.email}`}
-                        className="hidden md:inline-flex px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary-dark transition-colors"
-                    >
-                        Contact Me
-                    </a>
+
+                    {/* Contact Me — left popover */}
+                    <div ref={contactRef} className="relative hidden md:block">
+                        <button
+                            onClick={() => setContactOpen((o) => !o)}
+                            className="px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary-dark transition-colors"
+                        >
+                            Contact Me
+                        </button>
+
+                        {contactOpen && (
+                            <div className="absolute right-0 top-full mt-2 w-52 bg-bg-card border border-border rounded-xl shadow-lg p-4 z-50">
+                                {/* Arrow pointing up toward button */}
+                                <div className="absolute -top-[5px] right-4 w-2.5 h-2.5 bg-bg-card border-l border-t border-border rotate-45" />
+
+                                <a
+                                    href={`tel:${siteConfig.phone.replace(/-/g, "")}`}
+                                    className="flex items-center gap-2.5 text-sm text-fg-muted hover:text-primary transition-colors"
+                                >
+                                    <PhoneIcon />
+                                    {siteConfig.phone}
+                                </a>
+
+                                <div className="my-3 border-t border-border" />
+
+                                <a
+                                    href={`mailto:${siteConfig.email}`}
+                                    className="flex items-center gap-2.5 text-sm text-fg-muted hover:text-primary transition-colors min-w-0"
+                                >
+                                    <MailIcon />
+                                    <span className="truncate">{siteConfig.email}</span>
+                                </a>
+                            </div>
+                        )}
+                    </div>
 
                     {/* Mobile hamburger */}
                     <button
@@ -139,13 +186,24 @@ export default function Navbar() {
                             {l.label}
                         </a>
                     ))}
-                    <a
-                        href={`mailto:${siteConfig.email}`}
-                        onClick={handleNavClick}
-                        className="mt-2 block text-center px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary-dark transition-colors"
-                    >
-                        Contact Me
-                    </a>
+                    <div className="mt-3 pt-3 border-t border-border space-y-2.5">
+                        <a
+                            href={`tel:${siteConfig.phone.replace(/-/g, "")}`}
+                            onClick={handleNavClick}
+                            className="flex items-center gap-2.5 text-sm text-fg-muted hover:text-primary transition-colors"
+                        >
+                            <PhoneIcon />
+                            {siteConfig.phone}
+                        </a>
+                        <a
+                            href={`mailto:${siteConfig.email}`}
+                            onClick={handleNavClick}
+                            className="flex items-center gap-2.5 text-sm text-fg-muted hover:text-primary transition-colors"
+                        >
+                            <MailIcon />
+                            {siteConfig.email}
+                        </a>
+                    </div>
                 </div>
             )}
         </nav>

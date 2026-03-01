@@ -19,7 +19,7 @@ export default function Background() {
                         {experience.map((exp, i) => (
                             <div key={i} className="relative pl-6 border-l-2 border-primary/30">
                                 <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-bg" />
-                                <p className="text-xs font-medium text-primary">{exp.period}</p>
+                                {exp.period && <p className="text-xs font-medium text-primary">{exp.period}</p>}
                                 <h4 className="text-base font-semibold text-fg mt-0.5">{exp.role}</h4>
                                 <p className="text-sm text-fg-muted">{exp.company}</p>
                                 <ul className="mt-2.5 space-y-1.5">

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import type { Project } from "@/content/siteData";
 
@@ -22,6 +25,8 @@ function ExternalLinkIcon() {
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
+    const [open, setOpen] = useState(false);
+
     return (
         <div className="project-card">
             {/* Image */}
@@ -47,7 +52,16 @@ export default function ProjectCard({ project }: { project: Project }) {
                     ))}
                 </div>
 
-                <div className="project-card-description">
+                {/* Toggle */}
+                <button
+                    onClick={() => setOpen((o) => !o)}
+                    className="project-card-toggle"
+                >
+                    {open ? "Less ↑" : "Read about it ↓"}
+                </button>
+
+                {/* Bullets — animated expand */}
+                <div className={`project-card-description project-card-description--collapsible${open ? " project-card-description--open" : ""}`}>
                     {project.impactBullets.map((b, i) => (
                         <p key={i}>
                             <span className="project-card-bullet">›</span> {b}
