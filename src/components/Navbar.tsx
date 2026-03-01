@@ -103,7 +103,7 @@ export default function Navbar() {
                         {mounted ? (darkMode ? <SunIcon /> : <MoonIcon />) : <MoonIcon />}
                     </button>
                     <a
-                        href="#contact"
+                        href={`mailto:${siteConfig.email}`}
                         className="hidden md:inline-flex px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary-dark transition-colors"
                     >
                         Contact Me
@@ -140,7 +140,7 @@ export default function Navbar() {
                         </a>
                     ))}
                     <a
-                        href="#contact"
+                        href={`mailto:${siteConfig.email}`}
                         onClick={handleNavClick}
                         className="mt-2 block text-center px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary-dark transition-colors"
                     >

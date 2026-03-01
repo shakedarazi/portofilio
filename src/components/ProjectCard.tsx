@@ -24,66 +24,44 @@ function ExternalLinkIcon() {
 export default function ProjectCard({ project }: { project: Project }) {
     return (
         <div className="project-card">
-            {/* ── Screenshot Hero (TOP) ── */}
+            {/* Image */}
             <div className="project-card-image">
-                {/* Window dots */}
                 <div className="project-card-dots">
-                    <span />
-                    <span />
-                    <span />
+                    <span /><span /><span />
                 </div>
                 <Image
                     src={project.image}
                     alt={project.title}
-                    width={700}
-                    height={400}
-                    className="w-full h-full object-cover"
-                    quality={90}
+                    fill
+                    style={{ objectFit: "contain" }}
                 />
             </div>
 
-            {/* ── Content Body (BOTTOM) ── */}
-            <div className="px-5 py-[18px] flex flex-col flex-1">
-                {/* Title */}
-                <h3 className="text-[1.05rem] font-bold text-fg leading-snug tracking-tight">
-                    {project.title}
-                </h3>
+            {/* Body */}
+            <div className="project-card-body">
+                <h3 className="project-card-title">{project.title}</h3>
 
-                {/* Description */}
-                <p className="text-[0.8rem] text-fg-muted mt-2.5 leading-[1.5]">
-                    {project.summary}
-                </p>
-
-                {/* Impact bullets */}
-                <ul className="mt-3 space-y-[9px]">
-                    {project.impactBullets.map((b, i) => (
-                        <li key={i} className="flex items-start gap-2 text-[0.78rem] text-fg-muted leading-[1.45]">
-                            <span className="text-primary mt-px font-bold shrink-0">›</span>
-                            {b}
-                        </li>
-                    ))}
-                </ul>
-
-                {/* Tags */}
-                <div className="mt-4 flex flex-wrap gap-1.5">
+                <div className="project-card-tags">
                     {project.tags.map((tag) => (
-                        <span
-                            key={tag}
-                            className="px-2 py-0.5 rounded-full text-[0.65rem] font-medium bg-primary/10 text-primary border border-primary/20"
-                        >
-                            {tag}
-                        </span>
+                        <span key={tag}>{tag}</span>
                     ))}
                 </div>
 
-                {/* Links */}
-                <div className="mt-3.5 flex gap-3 pt-3 border-t border-border">
+                <div className="project-card-description">
+                    {project.impactBullets.map((b, i) => (
+                        <p key={i}>
+                            <span className="project-card-bullet">›</span> {b}
+                        </p>
+                    ))}
+                </div>
+
+                <div className="project-card-footer">
                     {project.github && (
                         <a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-fg-muted hover:text-primary transition-colors"
+                            className="project-card-link"
                         >
                             <GhSmallIcon /> GitHub
                         </a>
@@ -93,7 +71,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                             href={project.liveDemo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-fg-muted hover:text-primary transition-colors"
+                            className="project-card-link"
                         >
                             <ExternalLinkIcon /> Live Demo
                         </a>

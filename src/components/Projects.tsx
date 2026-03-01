@@ -1,30 +1,21 @@
+import Section from "./Section";
 import ProjectCard from "./ProjectCard";
 import { projects, siteConfig } from "@/content/siteData";
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-12 md:py-16 projects-section-bg">
-            {/* Section header */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8 md:mb-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-fg">
-                    Featured Projects
-                </h2>
-                <p className="mt-2 text-fg-muted max-w-2xl mx-auto text-sm">
-                    Projects that reflect how I approach building software systems.
-                </p>
+        <Section
+            id="projects"
+            title="Featured Projects"
+            subtitle="Projects that reflect how I approach building software systems."
+        >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projects.map((p) => (
+                    <ProjectCard key={p.title} project={p} />
+                ))}
             </div>
 
-            {/* 2-per-row grid */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
-                    {projects.map((p) => (
-                        <ProjectCard key={p.title} project={p} />
-                    ))}
-                </div>
-            </div>
-
-            {/* View GitHub Profile CTA */}
-            <div className="mt-10 md:mt-12 text-center">
+            <div className="mt-14 text-center">
                 <a
                     href={siteConfig.github}
                     target="_blank"
@@ -41,6 +32,6 @@ export default function Projects() {
                     View GitHub Profile
                 </a>
             </div>
-        </section>
+        </Section>
     );
 }
