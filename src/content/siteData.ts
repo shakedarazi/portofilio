@@ -116,7 +116,7 @@ export interface SiteConfig {
   },
   
   {
-  title: "DAG Execution Engine",
+  title: "Event-Driven DAG Execution Engine with Isolated Agents",
   impactBullets: [
     "Enforced DAG-based execution constraints, preventing cyclic dependencies and guaranteeing bounded, predictable computation.",
     "Isolated computation units with dedicated worker threads and queues, enabling safe concurrency without execution interference.",
