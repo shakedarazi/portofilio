@@ -13,6 +13,8 @@ export interface SiteConfig {
   linkedin: string;
   cvUrl: string;
   profileImage: string;
+  headline: string;
+  subtext: string;
   }
   
   export interface Hero {
@@ -54,6 +56,8 @@ export interface SiteConfig {
   linkedin: "https://www.linkedin.com/in/shaked-arazi1/",
   cvUrl: "/cv.pdf",
   profileImage: "/profile.webp",
+  headline: "",
+  subtext: "",
   };
   
   // ─── Hero ───
