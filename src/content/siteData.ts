@@ -106,62 +106,60 @@ export interface SiteConfig {
   {
   title: "ContextGuard - Attack Path Analyzer",
   impactBullets: [
-  "Built a graph model of cloud infrastructure from Terraform plans, exposing how network reachability and identity permissions combine into real attack paths.",
-  "Implemented reachability analysis to distinguish theoretical exposure from actionable exploitation paths.",
-  "Turned static infrastructure configuration into an executable security model enabling precise reasoning about risk.",
+    "Modeled cloud infrastructure as an attack graph, enabling precise identification of exploitable paths to sensitive assets.",
+    "Implemented reachability-based severity scoring, reducing false positives and focusing attention on real security risks.",
+    "Generated actionable remediation breakpoints, allowing engineers to eliminate attack paths with targeted control changes."
   ],
   image: "/projects/contextguard.png",
-  tags: ["Python", "Terraform"],
+  tags: ["Python", "IaC", "Cloud Security", "IAM", "CLI", "CI gating"],
   github: "https://github.com/shakedArazi/contextguard",
   },
   
   {
   title: "DAG Execution Engine",
   impactBullets: [
-  "Developed an execution engine that runs computation over validated DAGs with strict dependency enforcement.",
-  "Ensured deterministic execution by explicitly modeling data flow and execution order.",
-  "Created isolation between processing units, enabling concurrency without hidden side effects.",
+    "Enforced DAG-based execution constraints, preventing cyclic dependencies and guaranteeing bounded, predictable computation.",
+    "Isolated computation units with dedicated worker threads and queues, enabling safe concurrency without execution interference.",
+    "Modeled computation as explicit event-driven dataflow, improving system debuggability and reasoning about execution behavior."
   ],
   image: "/projects/javaDAG.png",
-  tags: ["Java", "Spring Boot"],
-  github: "https://github.com/shakedArazi/dag-engine",
+  tags: ["Java", "Spring Boot", "Multithreading", "REST API", "Event-Driven"],
+  github: "https://github.com/shakedarazi/Design_MVC",
   },
   
   {
   title: "Secure Ai-assistant for task management",
   impactBullets: [
-    "Enforced a strict mutation boundary, ensuring all state changes pass through a single validated API.",
-    "Isolated the AI as a stateless container with no database access or exposed ports, preventing it from modifying system state.",
-    "Centralized authentication, authorization, and validation behind a single ingress backend.",
-    "Applied Docker network isolation to enforce trust boundaries and reduce attack surface.",
-    "Separated AI inference from system authority, ensuring suggestions cannot directly trigger execution."
+    "Enforced a strict mutation boundary, eliminating unauthorized or implicit state modification paths.",
+    "Integrated external AI through a validated suggestion flow, preventing unintended or autonomous system changes.",
+    "Containerized services with Docker and isolated them on a private network, reducing attack surface and improving deployment reliability."
   ],
   image: "/projects/core_api.png",
-  tags: ["FastAPI", "python", "MongoDB", "Docker","RESTful API"],
+  tags: ["FastAPI", "pytest", "MongoDB", "Docker Compose","RESTful API"],
   github: "https://github.com/shakedArazi/taskgenius",
   },
   
   {
   title: "ChatBot - Execution Plan Orchestrator",
   impactBullets: [
-  "Built an orchestration layer that converts user intent into structured execution graphs.",
-  "Explicitly modeled task dependencies and execution order.",
-  "Enabled controlled and observable execution of multi-step processes.",
+    "Built a planner–executor orchestration layer that converts natural language into structured tool chains, enabling deterministic multi-step task execution.",
+    "Integrated hybrid local and cloud LLM routing, reducing operational cost while preserving response accuracy through selective fallback.",
+    "Implemented RAG over a vector database, grounding responses in real documents and improving factual reliability."
   ],
   image: "/projects/chatbot.png",
-  tags: ["TypeScript", "Python", "FastAPI"],
+  tags: ["FastAPI","ExpressJS", "RAG","Ollama","huggingface", "OpenAI", "Microservices"],
   github: "https://github.com/shakedArazi/ChatBot",
   },
   
   {
-  title: "PolarLens — Social Polarization Intelligence Pipeline",
+  title: "PolarLens — Social Polarization Intelligence Pipeline (ongoing)",
   impactBullets: [
-  "Built a batch data pipeline transforming raw opinion data into structured analytical outputs.",
-  "Orchestrated staged execution using Airflow with explicit processing boundaries.",
-  "Stored and exposed results through BigQuery for downstream analysis.",
+    "Developing a batch pipeline that transforms raw opinion data into structured analytical datasets.",
+    "Structuring the workflow as staged Airflow batches, ensuring processing runs on complete and consistent data.",
+    "Implementing pre-aggregation before BigQuery ingestion, enabling fast analytical queries without scanning raw records."
   ],
   image: "/projects/polarization.png",
-  tags: ["Python", "Airflow", "GCP", "BigQuery"],
+  tags: ["Python", "Airflow", "GCP", "BigQuery", "ETL", "Data Pipelines"],
   github: "https://github.com/shakedArazi/review-analysis",
   },
   
